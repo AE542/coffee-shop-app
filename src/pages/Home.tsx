@@ -1,13 +1,17 @@
 import { useState } from 'preact/hooks';
-// import { signal } from '@preact/signals';
 
+import { signal } from '@preact/signals';
+// run npm when installing new packages!! Had error saying it couldn't find signals... and install the right package! signals not signals-reac
+
+import style from './style.css';
+
+const counter = signal(0);
+const coffeeCounter = signal(0);	
 export function Home() {
 
-//const counter = signal(0);	
-const [count, setCount] = useState(0);
-const increment = () => setCount((count) => count + 1);
-const [coffeeCount, setCoffeeCount] = useState(0);
-const incrementCoffee = () => setCoffeeCount((coffeeCount) => coffeeCount + 1);
+console.log(counter);
+console.log(coffeeCounter);
+
 var opacity = 0;
 // set opacity to 0 on loading
 
@@ -27,11 +31,10 @@ opacity += 0.01;
 // YO THIS WORKS!! BUT needed to use an eventListener in JS to make this work.
 // needs to be refactored for lifecycle hooks in Preac
 
-// let counter = localStorage.getItem('count');
 
 	return (
 		<>
-			<div>
+			{/* <div> */}
 				{/* <a href="https://vitejs.dev" target="_blank">
 					<img src={viteLogo} class="logo" alt="Vite logo" />
 				</a>
@@ -39,18 +42,20 @@ opacity += 0.01;
 					<img src={preactLogo} class="logo preact" alt="Preact logo" />
 				</a> */}
 				{/* insert coffee logo here */}
-			</div>
-			<h1>Coffee Shops of London</h1>
-			<div class="card">
-				<div class="btn-toolbar">
-					<button onClick={increment}>Number of Coffee shops visited is: {count}
-					</button>
-					<span class="button-spacing"></span>
-					<button onClick={incrementCoffee}>Cups of coffee so far: {coffeeCount}</button>
+			{/* </div> */}
+			<div class="outer-card align-items-start">
+				<h1>Coffee Shops of London</h1>
+				<div class="card">
+					<div class="btn-toolbar">
+						<button onClick={() => counter.value++}>Number of Coffee shops visited is: {counter}
+						</button>
+						<span class="button-spacing"></span>
+						<button onClick={() => coffeeCounter.value++}>Cups of coffee so far: {coffeeCounter}</button>
 
+					</div>
 				</div>
+				<p class="subtitle">Where all my coffee shop adventures are documented</p>
 			</div>
-			<p class="subtitle">Where all my coffee shop adventures are documented</p>
 		</>
 	);
 
