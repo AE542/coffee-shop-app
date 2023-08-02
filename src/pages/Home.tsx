@@ -2,7 +2,6 @@ import { useState } from 'preact/hooks';
 
 import { signal } from '@preact/signals';
 // run npm when installing new packages!! Had error saying it couldn't find signals... and install the right package! signals not signals-reac
-
 import style from './style.css';
 
 const counter = signal(0);
