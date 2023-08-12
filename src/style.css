@@ -111,3 +111,23 @@ button:focus-visible {
 .button-spacing {
 	margin-right: 10px;
 }
+
+/* Navbar */
+
+.link-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.link-container a {
+	text-decoration: none;
+	font-size: 1.2rem;
+	margin-right: 10px;
+}
+
+#navBar {
+	position:fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}

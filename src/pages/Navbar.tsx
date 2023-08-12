@@ -8,10 +8,9 @@ const Navbar = () => {
     return (
         <nav>
               <ul>
-
-                <div class="link justify-content: space-between">
+                <div class="link-container">
                 <Link href="/">Home</Link>
-
+                <Link href="/coffee">Coffee</Link>
                 <Link href="/about">About</Link>
                 </div>
               </ul>  
