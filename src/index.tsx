@@ -2,6 +2,8 @@ import { render } from 'preact';
 import { LocationProvider, Router, Route } from 'preact-iso';
 import { Home } from './pages/Home.jsx';
 import { NotFound } from './pages/_404.jsx';
+import { Coffee } from './pages/Coffee.jsx';
+import { About } from './pages/About.jsx';
 import { h } from 'preact';
 import Navbar from './pages/Navbar.jsx';
 import './style.css';
@@ -23,7 +25,9 @@ export function App() {
 					{/* this needs to be moved outside the app component to work as a nav bar */}
 					<Router>
 						<Route path="/" component={Home} />
+						<Route path="/about" component={About} />
 						<Route default component={NotFound} />
+						<Route path="coffee" component={Coffee}/>
 					</Router>
 				</LocationProvider>
 			
